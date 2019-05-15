@@ -17,6 +17,10 @@ bootstrap4 css檔案說明:
 1.除了bootstrap-custom.css以外的檔案請勿更動以免造成網頁跑版
 2.編輯bootstrap-custom.css時請加上註解以便修改時快速理解該css的使用時機
 
+假圖片產生器:
+  使用時請複製下列程式碼並自行修改寬、高值成為所需大小(若產生失敗時請微調寬或高即可)
+<img src="http://fakeimg.pl/寬x高/" alt="fake image">
+
 給路過的你:
 這是個購物網站的期末專案，我們銷售的商品主要專注在壁紙和油漆。
 如果您有任何想法或建議，歡迎在issue的頁籤中留言給我們。
