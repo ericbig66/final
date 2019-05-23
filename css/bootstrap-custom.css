@@ -8,7 +8,34 @@
 	height:35px;
 }
 
+/*文字樣式*/
+.underline{
+    text-decoration: underline:;
+}
 
+.overline{
+    text-decoration: overline;
+}
+
+.bothline{
+    border-top:1px solid;
+    border-bottom: 1px solid;
+    line-height: 2;
+}
+
+/*中文字形定義 語法:.chinese-font*/
+.chinese-font{
+    font-family: Microsoft JhengHei !important;
+}
+
+/*背景設定*/
+.bg-cover{
+    background-size: cover;
+}
+
+.bg-center{
+    background-position: center center;
+}
 
 
 
@@ -161,4 +188,11 @@ a.waves-effect, a.waves-light {
 }
 .fa-dribbble:before {
     content: "\f17d";
+}
+
+
+/*圖片資料區*/
+.wallpaper_photo{
+    background-image: url(https://fakeimg.pl/1900x500);
+    height: 500px;
 }
