@@ -1,3 +1,4 @@
+
 /*特大圓角(全部)*/
 .rounded-xlg{
 	border-radius: 1rem !important;
@@ -37,7 +38,39 @@
     background-position: center center;
 }
 
+    /*高度樣式定義*/
+    /*語法: row-數字(1~5)*/
+.row-1{
+    height: 1rem;
+}
 
+.row-2{
+    height: 3rem;
+}
+
+.row-3{
+    height: 6rem;
+}
+
+.row-4{
+    height: 12rem;
+}
+
+.row-4p5{
+    height: 18rem;
+}
+
+.row-5{
+    height: 24rem;
+}
+
+.row-5p25{
+    height: 30rem;
+}
+
+.row-5p5{
+    height: 36rem;
+}
 
 
 /*圖片資料區*/
@@ -97,3 +130,71 @@
     letter-spacing: 5px;
     font-size: 13px;
  }
+
+/*數量輸入框*/
+.quantity_input{
+    overflow: hidden !important;
+    -webkit-appearance:none !important;
+    margin:0 0 0 2%;
+    border-top:1px solid blue;
+    border-bottom:1px solid blue;
+    border-left: none;
+    border-right: none;
+    z-index: 0;
+    width:18%;
+    height: 38px;
+}
+
+.quantity_minus:focus{
+    outline:none !important;
+}
+.quantity_input:focus{
+    outline:none !important;
+}
+.quantity_plus:focus{
+    outline:none !important;
+}
+
+.quantity_plus {
+  text-align: center; 
+  margin-left:-5% !important;
+  background-color: white;
+  width:6%;  
+  z-index: 1;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding:0;
+  height: 38px;
+}
+
+.quantity_minus {
+  text-align: center; 
+  margin-right:-5% !important;
+  width:6%;
+  z-index: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: white;
+  padding:0;
+  height: 38px;
+}
+
+.amount_text{
+    line-height: 38px;
+}
+
+.amount_btn i{
+    font-size: 13px;
+    line-height: 2;
+}
+
+/*評價星星*/
+.rating i:hover.rating i~.rating i::before{
+    font-weight: 900 !important;
+}
+
+/*文字刪除線*/
+.strike_through{
+    text-decoration: line-through solid red;
+
+}
