@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="500">
+	<title>sotre</title>
+	<link rel="stylesheet" href="css/mdb.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.css">
+	<link rel="stylesheet" href="css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="css/bootstrap-custom.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+	<!--navbar-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo.png" class="logo float-left mr-0"></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	    <!-- 首頁按鈕 -->
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+		<!-- 油漆選單 -->
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          paint
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">防水漆</a>
+	          <a class="dropdown-item" href="#">白板漆</a>
+	          <a class="dropdown-item" href="#">速乾淨味漆</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">油漆簡介</a>
+	        </div>
+	      </li>
+		<!-- 壁紙選單 -->
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          wallpaper
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">亮面壁紙</a>
+	          <a class="dropdown-item" href="#">霧面壁紙</a>
+	          <a class="dropdown-item" href="#">印花壁紙</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">壁紙簡介</a>
+	        </div>
+	      </li>
+	      <!-- 油漆刷選單 -->
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Brush
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">滾輪工具</a>
+	          <a class="dropdown-item" href="#">油漆刮刀</a>
+	          <a class="dropdown-item" href="#">各式漆刷</a>
+	        </div>
+	      </li>
+	    </ul>
+		
+		<ul class="navbar-nav ml-auto">
+			<li class="mx-1 tooltip-hover"><a href="#"><img class="nav-icon" src="img/user.png"></a><div class="tooltip">會員中心</div></li>
+			<li class="mx-1 tooltip-hover"><a href="#"><img class="nav-icon" src="img/cart.png"></a><div class="tooltip">購物推車</div></li>
+			<li class="mx-1 tooltip-hover"><a href="#"><img class="nav-icon" src="img/wish_list.png"></a><div class="tooltip">願望清單</div></li>
+			<li class="mx-1 tooltip-hover"><a href="#"><img class="nav-icon" src="img/question.png"></a><div class="tooltip">如何購買</div></li>
+		</ul>
+
+	    <form class="form-inline my-2 my-lg-0">
+	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	    </form>
+	  </div>
+	</nav>
+<!-- ------------------------------------------------- -->
+	<!-- 商品介紹區 -->
+	<div class="card-deck mx-auto col-10 mt-5">
+		<!-- 商品圖片區 -->
+		<div class="card rounded-xlg">
+			<div class="imgshow mx-auto mt-4 mb-4">
+				<!-- 大圖 -->
+				<div class="product_photo"><div id="photo_frame"></div></div>
+				<!-- 縮圖列表 -->
+				<div class="product_thumb d-flex"><!-- 後端注意:使用時src命名規則為"產品編號_顏色"、id命名規則為"t"加上從0開始的數字、 -->
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t0" onclick="showme('a0')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t1" onclick="showme('a1')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t2" onclick="showme('a2')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t3" onclick="showme('a3')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t4" onclick="showme('a4')">
+				</div><!-- 後端注意:工作尚未結束，請往javaScript連結區看，必須設定getPic參數才能正常工作，詳見倒數第4行 -->
+			</div>
+		</div>
+		<!-- 商品簡介區 -->
+		<div class="card rounded-xlg pt-4 px-4">
+			<h2 class="chinese-font mb-2 chinese-font">商品名稱</h2>
+			<div class="d-flex star">
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star"></i>
+				<i class="fas fa-star-half-alt"></i>
+				<i class="far fa-star"></i>
+				<div class="mx-3 chinese-font">n筆評價</div>
+				<div><a href="#" class="chinese-font"></a>我要評價</div>
+			</div>
+		<!-- <i class="far fa-star"></i> 空星-->
+		<!-- <i class="fas fa-star-half-alt"></i> 半星-->
+		<!-- <i class="fas fa-star"></i> 全星-->
+			<h2 class="price mb-4">$1000</h2>
+			<div class="product_detail">
+				商品編號:abc123blue<br><!-- 後端注意:產品盟稱命名規則為"商品編號加顏色" -->
+				材質:普通亮面<br>
+				特色:<br>
+				<ul>
+					<li>遇到髒污可直接用清水擦拭</li>
+					<li>色彩封存技術顏色始終如一</li>
+					<li>彈性表層長久使用不龜裂</li>
+					<li><a href="#more" class="text">more...</a></li>
+				</ul>
+				庫存量:30<br>
+			</div>
+			<div class="buy_form">
+				<form name="order" action="#" class="d-flex">
+					
+					<button type="button" class="btn btn-outline-primary">Primary</button>
+				</form>	
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- ------------------------------------------------- -->
+<!-- Footer -->
+	<footer class="page-footer font-small unique-color-dark mt-5">
+
+	  <div style="background-color: #6351ce;">
+	    <div class="container">
+
+	      <!-- Grid row-->
+	      <div class="row py-4 d-flex align-items-center">
+
+	        <!-- Grid column -->
+	        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+	          <h6 class="mb-0">Get connected with us on social networks!</h6>
+	        </div>
+	        <!-- Grid column -->
+
+	        <!-- Grid column -->
+	        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+	          <!-- Facebook -->
+	          <a class="fb-ic">
+	            <i class="fab fa-facebook-f white-text mr-4"> </i>
+	          </a>
+	          <!-- Twitter -->
+	          <a class="tw-ic">
+	            <i class="fab fa-twitter white-text mr-4"> </i>
+	          </a>
+	          <!-- Google +-->
+	          <a class="gplus-ic">
+	            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+	          </a>
+	          <!--Linkedin -->
+	          <a class="li-ic">
+	            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+	          </a>
+	          <!--Instagram-->
+	          <a class="ins-ic">
+	            <i class="fab fa-instagram white-text"> </i>
+	          </a>
+
+	        </div>
+	        <!-- Grid column -->
+
+	      </div>
+	      <!-- Grid row-->
+
+	    </div>
+	  </div>
+
+	  <!-- Footer Links -->
+	  <div class="container text-center text-md-left mt-5">
+
+	    <!-- Grid row -->
+	    <div class="row mt-3">
+
+	      <!-- Grid column -->
+	      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+	        <!-- Content -->
+	        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+	        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+	        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+	          consectetur
+	          adipisicing elit.</p>
+
+	      </div>
+	      <!-- Grid column -->
+
+	      <!-- Grid column -->
+	      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+	        <!-- Links -->
+	        <h6 class="text-uppercase font-weight-bold">Products</h6>
+	        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+	        <p>
+	          <a href="#!">MDBootstrap</a>
+	        </p>
+	        <p>
+	          <a href="#!">MDWordPress</a>
+	        </p>
+	        <p>
+	          <a href="#!">BrandFlow</a>
+	        </p>
+	        <p>
+	          <a href="#!">Bootstrap Angular</a>
+	        </p>
+
+	      </div>
+	      <!-- Grid column -->
+
+	      <!-- Grid column -->
+	      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+	        <!-- Links -->
+	        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+	        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+	        <p>
+	          <a href="#!">Your Account</a>
+	        </p>
+	        <p>
+	          <a href="#!">Become an Affiliate</a>
+	        </p>
+	        <p>
+	          <a href="#!">Shipping Rates</a>
+	        </p>
+	        <p>
+	          <a href="#!">Help</a>
+	        </p>
+
+	      </div>
+	      <!-- Grid column -->
+
+	      <!-- Grid column -->
+	      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+	        <!-- Links -->
+	        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+	        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+	        <p>
+	          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+	        <p>
+	          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+	        <p>
+	          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+	        <p>
+	          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+	      </div>
+	      <!-- Grid column -->
+
+	    </div>
+	    <!-- Grid row -->
+
+	  </div>
+	  <!-- Footer Links -->
+
+	  <!-- Copyright -->
+	  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+	    <a href="https://ericbig66.github.io/resume/"> Eric's</a>
+	  </div>
+	  <!-- Copyright -->
+
+	</footer>
+	<!-- Footer -->
+<!-- -----------------------此線以下為javascrpit連結區---------------------------------- -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/imgshow.js"></script>
+	<div onload="getPic(5)"></div><!-- 請在此設定設定預覽圖數量(後端使用時請更改getPic小括號內的參數) -->
+	<script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>

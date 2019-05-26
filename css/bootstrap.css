@@ -7598,7 +7598,7 @@ button.bg-dark:focus {
     -ms-flex-negative: 1 !important;
     flex-shrink: 1 !important;
   }
-  .justify-content-xl-start {
+  .F-start {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important;
   }
