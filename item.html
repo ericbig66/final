@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/bootstrap-reboot.css">
 	<link rel="stylesheet" href="css/bootstrap-custom.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<link rel="stylesheet" href="css/star.css">
 </head>
 <body>
 	<!--navbar-->
@@ -87,12 +88,12 @@
 				<div class="product_photo"><div id="photo_frame"></div></div>
 				<!-- 縮圖列表 -->
 				<div class="product_thumb d-flex"><!-- 後端注意:使用時src命名規則為"產品編號_顏色"、id命名規則為"t"加上從0開始的數字、 -->
-					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t0" onclick="showme('a0')">
-					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t1" onclick="showme('a1')">
-					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t2" onclick="showme('a2')">
-					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t3" onclick="showme('a3')">
-					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t4" onclick="showme('a4')">
-				</div><!-- 後端注意:工作尚未結束，請往javaScript連結區看，必須設定getPic參數才能正常工作，詳見倒數第4行 -->
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t0" onclick="showme('0')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t1" onclick="showme('1')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t2" onclick="showme('2')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t3" onclick="showme('3')">
+					<img src="https://fakeimg.pl/100x100" class="thumbs" id="t4" onclick="showme('4')">
+				</div>
 			</div>
 		</div>
 		<!-- 商品簡介區 -->
@@ -111,7 +112,7 @@
 		<!-- <i class="fas fa-star-half-alt"></i> 半星-->
 		<!-- <i class="fas fa-star"></i> 全星-->
 			<h2 class="price mb-4">$1000</h2>
-			<div class="product_detail">
+			<div class="product_detail mb-4 chinese-font">
 				商品編號:abc123blue<br><!-- 後端注意:產品盟稱命名規則為"商品編號加顏色" -->
 				材質:普通亮面<br>
 				特色:<br>
@@ -124,10 +125,98 @@
 				庫存量:30<br>
 			</div>
 			<div class="buy_form">
-				<form name="order" action="#" class="d-flex">
+				<form name="order" action="#">
+					<div class="d-flex">
+						<span class="chinese-font amount_text">我要買</span>
+						<button type="button" class="btn btn-outline-primary quantity_minus mx-2 amount_btn"><i class="fas fa-minus"></i></button>
+						<input class="text-center quantity_input" type="number" name="quantity" min="1" max="30" value="1" >
+						<button type="button" class="btn btn-outline-primary quantity_plus mr-2 amount_btn"><i class="fas fa-plus"></i></button>	
+						<span class="chinese-font amount_text">個</span>
+						<button type="button" class="btn btn-outline-success chinese-font mx-2">加入購物車</button>
+						<button type="button" class="btn btn-outline-info chinese-font mx-2">加入願望清單</button>
+					</div>
+				</form>
+				<div class="transit_fee chinese-font mt-3">
+					運費計算方式：<br>
+					&emsp;&emsp;<span class="strike_through">原價:每樣商品$60</span><br>
+					&emsp;&emsp;開幕期間優惠:全面免運費
+				</div>	
+			</div>
+			
+			<div id="thumb_tab">
+				
+
+			</div>
+		</div>
+	</div>
+	<!-- 詳細規格/評論 -->
+	<div class="detail_review rounded-xlg col-10 mx-auto mt-5">
+		<div class="mx-4 border rounded-xlg px-3 pt-3">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+			  <li class="nav-item">
+			    <a class="nav-link active chinese-font" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">詳細規格</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link chinese-font" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">評論</a>
+			  </li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+			  <div class="tab-pane fade show active px-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+			  	<h2 class="chinese-font mt-3">木紋壁紙</h2>
+			  		規格及使用注意事項：
+			  	<ol start="1">
+			  		<li>商品型號：abc123blue</li>
+			  		<li>尺寸：2公尺 x 3公尺</li>
+			  		<li>黏貼後請放置約三天待多餘空氣自動排出</li>
+			  		<li>遇到髒時請勿使用強酸或強鹼清潔劑，以免損壞保護層</li>
+			  		<li>請勿將高溫電器放置壁紙旁以免壁紙變色</li>
+			  		<li>本產品保固期限為一年(僅限非人為破壞瑕疵)</li>
+			  		<li>本產品經拆封後無瑕疵即不可退(換)貨</li>
+			  	</ol>
+				
+				使用說明：
+				<ol>
+					<li>用清水或酒精將牆面擦拭乾淨</li>
+					<li>將壁紙之背膠慢慢撕開</li>
+					<li>一邊撕下背膠一邊將撕開的部分貼齊牆角</li>
+					<li>完成黏貼後若有小氣泡時請勿將物品靠在壁紙上</li>
+					<li>請放置約3天後即可自動排出所有多餘空氣</li>
+				</ol>
+
+					額外服務:
+				<ol>
+					<li>壁紙黏貼服務，一通電話到府免費估價</li>
+					<li>免費樣品索取，詳情請洽客服人員</li>
+				</ol>
+
+			  </div>
+			  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<form class="pt-3 px-3 chinese-font" id="ratingsForm" name="comment" method="post">
+					<div class="mb-2">我的評價：</div>
+					<div class="stars">
+						<input type="radio" name="star" class="star-1" id="star-1" value="1"/>
+						<label class="star-1" for="star-1">1</label>
+						<input type="radio" name="star" class="star-2" id="star-2" value="2"/>
+						<label class="star-2" for="star-2">2</label>
+						<input type="radio" name="star" class="star-3" id="star-3" value="3"/>
+						<label class="star-3" for="star-3">3</label>
+						<input type="radio" name="star" class="star-4" id="star-4" value="4"/>
+						<label class="star-4" for="star-4">4</label>
+						<input type="radio" name="star" class="star-5" id="star-5" value="5"/>
+						<label class="star-5" for="star-5">5</label>
+						<span></span>
+					</div>
+					<div class="mb-3">我的看法：</div>
+					<textarea name="words" class="rounded-xlg col-12 row-4 mb-2" placeholder="告訴我們您的想法..."></textarea>
+					<div class="button-group d-flex justify-content-end chinese-font mb-3">
+						<button type="reset" class="btn btn-outline-danger mr-3">重新填寫</button>
+						<button type="button" class="btn btn-outline-success mr-2">確認送出</button>
+					</div>
 					
-					<button type="button" class="btn btn-outline-primary">Primary</button>
-				</form>	
+				</form>
+				
+			  </div>
+			  
 			</div>
 		</div>
 	</div>
@@ -282,7 +371,6 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/imgshow.js"></script>
-	<div onload="getPic(5)"></div><!-- 請在此設定設定預覽圖數量(後端使用時請更改getPic小括號內的參數) -->
 	<script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>
