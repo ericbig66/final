@@ -106,12 +106,12 @@
 				<i class="fas fa-star-half-alt"></i>
 				<i class="far fa-star"></i>
 				<div class="mx-3 chinese-font">n筆評價</div>
-				<div><a href="#" class="chinese-font"></a>我要評價</div>
+				<div><a href="#" class="chinese-font">我要評價</a></div>
 			</div>
 		<!-- <i class="far fa-star"></i> 空星-->
 		<!-- <i class="fas fa-star-half-alt"></i> 半星-->
 		<!-- <i class="fas fa-star"></i> 全星-->
-			<h2 class="price mb-4">$1000</h2>
+			<h2 class="price mb-4" id="getprice">$1000</h2>
 			<div class="product_detail mb-4 chinese-font">
 				商品編號:abc123blue<br><!-- 後端注意:產品盟稱命名規則為"商品編號加顏色" -->
 				材質:普通亮面<br>
@@ -122,20 +122,25 @@
 					<li>彈性表層長久使用不龜裂</li>
 					<li><a href="#more" class="text">more...</a></li>
 				</ul>
-				庫存量:30<br>
+				<span id="amount_left">庫存量:1000</span><br>
 			</div>
 			<div class="buy_form">
 				<form name="order" action="#">
 					<div class="d-flex">
 						<span class="chinese-font amount_text">我要買</span>
-						<button type="button" class="btn btn-outline-primary quantity_minus mx-2 amount_btn"><i class="fas fa-minus"></i></button>
-						<input class="text-center quantity_input" type="number" name="quantity" min="1" max="30" value="1" >
-						<button type="button" class="btn btn-outline-primary quantity_plus mr-2 amount_btn"><i class="fas fa-plus"></i></button>	
+						<div class="btn btn-outline-primary quantity_minus mx-2 amount_btn" onclick="quantity(-1)"><i class="fas fa-minus"></i></div>
+						<input class="text-center quantity_input" type="number" name="quantity" min="1" max="30" value="1" id="amount" onchange="getsum()">
+						<div class="btn btn-outline-primary quantity_plus mr-2 amount_btn" onclick="quantity(1)"><i class="fas fa-plus"></i></div>	
 						<span class="chinese-font amount_text">個</span>
-						<button type="button" class="btn btn-outline-success chinese-font mx-2">加入購物車</button>
+						<button type="button" class="btn btn-outline-success chinese-font mx-2" id="add_to_cart">加入購物車</button>
 						<button type="button" class="btn btn-outline-info chinese-font mx-2">加入願望清單</button>
 					</div>
 				</form>
+				
+				<div class="price_sum chinese-font" id="sum">
+					小計：$0
+				</div>
+
 				<div class="transit_fee chinese-font mt-3">
 					運費計算方式：<br>
 					&emsp;&emsp;<span class="strike_through">原價:每樣商品$60</span><br>
@@ -161,7 +166,7 @@
 			  </li>
 			</ul>
 			<div class="tab-content" id="myTabContent">
-			  <div class="tab-pane fade show active px-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+			  <div class="chinese-font tab-pane fade show active px-3" id="home" role="tabpanel" aria-labelledby="home-tab">
 			  	<h2 class="chinese-font mt-3">木紋壁紙</h2>
 			  		規格及使用注意事項：
 			  	<ol start="1">
@@ -371,6 +376,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/imgshow.js"></script>
+	<script src="js/setprice.js"></script>
 	<script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>
