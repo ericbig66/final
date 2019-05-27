@@ -157,21 +157,25 @@
 
 .quantity_plus {
   text-align: center; 
-  margin-left:-5% !important;
+  margin-left:-4% !important;
   background-color: white;
   width:6%;  
   z-index: 1;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   padding:0;
   height: 38px;
 }
 
 .quantity_minus {
   text-align: center; 
-  margin-right:-5% !important;
+  margin-right:-4% !important;
   width:6%;
   z-index: 1;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   background-color: white;
@@ -185,7 +189,7 @@
 
 .amount_btn i{
     font-size: 13px;
-    line-height: 2;
+    line-height: 3;
 }
 
 /*評價星星*/
