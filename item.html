@@ -99,74 +99,83 @@
 		<!-- 商品簡介區 -->
 		<div class="card rounded-xlg pt-4 px-4">
 			<h2 class="chinese-font mb-2 chinese-font">商品名稱</h2>
-			<div class="d-flex star">
+			<div class="d-flex star"><!-- 後端注意:此處之星星數須經過後端計算輸出(語法在本段下方) -->
 				<i class="fas fa-star"></i>
 				<i class="fas fa-star"></i>
 				<i class="fas fa-star"></i>
 				<i class="fas fa-star-half-alt"></i>
 				<i class="far fa-star"></i>
-				<div class="mx-3 chinese-font">n筆評價</div>
-				<div><a href="#" class="chinese-font">我要評價</a></div>
-			</div>
 		<!-- <i class="far fa-star"></i> 空星-->
 		<!-- <i class="fas fa-star-half-alt"></i> 半星-->
 		<!-- <i class="fas fa-star"></i> 全星-->
-			<h2 class="price mb-4" id="getprice">$1000</h2>
+				<div class="mx-3 chinese-font" onclick="change_tab(2)"><a href="#tabs" class="chinese-font" >n筆評價</a></div><!-- 後端注意:n為該商品評價的比數，並非所有留言的總比數!! -->
+				<div onclick="change_tab(1)"><a href="#tabs" class="chinese-font" >我要評價</a></div>
+			</div>
+		
+			<h2 class="price mb-4" id="getprice">$1000</h2><!-- 後端注意:更改價格時應保留$若去除將導致錯誤 -->
 			<div class="product_detail mb-4 chinese-font">
-				商品編號:abc123blue<br><!-- 後端注意:產品盟稱命名規則為"商品編號加顏色" -->
+				商品編號:abc123blue<br><!-- 後端注意:產品名稱命名規則為"商品編號加顏色"，其餘部分請存入資料庫 -->
 				材質:普通亮面<br>
 				特色:<br>
 				<ul>
 					<li>遇到髒污可直接用清水擦拭</li>
 					<li>色彩封存技術顏色始終如一</li>
 					<li>彈性表層長久使用不龜裂</li>
-					<li><a href="#more" class="text">more...</a></li>
+					<li onclick="change_tab(0)"><a href="#tabs" class="text" >more...</a></li>
 				</ul>
-				<span id="amount_left">庫存量:1000</span><br>
+				<span id="amount_left">庫存量:0</span><br><!-- 後端注意:更改庫存時應保留"庫存量:"，若去除將導致錯誤，另外若庫存量為0時加入購物車的開關會自動消失並以灰色的"銷售一空"按鈕取代，因此後端可省略庫存量為0之控制，但需控制數量為空的例外情形 -->
 			</div>
 			<div class="buy_form">
-				<form name="order" action="#">
+				<form name="order" action="#"><!-- 後端注意:此為購買表單起始處name可自行修改 -->
 					<div class="d-flex">
 						<span class="chinese-font amount_text">我要買</span>
 						<div class="btn btn-outline-primary quantity_minus mx-2 amount_btn" onclick="quantity(-1)"><i class="fas fa-minus"></i></div>
-						<input class="text-center quantity_input" type="number" name="quantity" min="1" max="30" value="1" id="amount" onchange="getsum()">
+						<input class="text-center quantity_input" type="number" name="quantity" min="1" max="30" value="1" id="amount" onchange="getsum()"><!-- 後端注意:name可以修改，數量請由此接收 -->
 						<div class="btn btn-outline-primary quantity_plus mr-2 amount_btn" onclick="quantity(1)"><i class="fas fa-plus"></i></div>	
 						<span class="chinese-font amount_text">個</span>
-						<button type="button" class="btn btn-outline-success chinese-font mx-2" id="add_to_cart">加入購物車</button>
-						<button type="button" class="btn btn-outline-info chinese-font mx-2">加入願望清單</button>
+						<button type="button" class="btn btn-outline-success chinese-font mx-2" id="add_to_cart">加入購物車</button><!-- 後端注意:此開關為後端設計之範圍 -->
+						<button type='button' class='btn btn-outline-dark chinese-font mx-2' id='out_of_stock' disabled>銷售一空</button><!-- 此按鈕請勿修改(庫存量為0時會自動使用) -->
+
+						<button type="button" class="btn btn-outline-info chinese-font mx-2">加入願望清單</button><!-- 後端注意:此開關為後端設計之範圍 -->
 					</div>
 				</form>
 				
-				<div class="price_sum chinese-font" id="sum">
-					小計：$0
-				</div>
+				<h3 class="price_sum chinese-font mt-3" id="sum">
+					小計：$0<!-- 此行請勿修改，小計會根據購買數量及單價自動產生 -->
+				</h3>
 
-				<div class="transit_fee chinese-font mt-3">
+				<div class="transit_fee chinese-font mt-3"><!-- 運費計算方案可自行修改 -->
 					運費計算方式：<br>
 					&emsp;&emsp;<span class="strike_through">原價:每樣商品$60</span><br>
 					&emsp;&emsp;開幕期間優惠:全面免運費
 				</div>	
 			</div>
 			
-			<div id="thumb_tab">
-				
-
-			</div>
+			<div id="thumb_tab"></div>
 		</div>
 	</div>
-	<!-- 詳細規格/評論 -->
+
+
+	<!-- 詳細規格/評價 --><a id="tabs"/>
 	<div class="detail_review rounded-xlg col-10 mx-auto mt-5">
 		<div class="mx-4 border rounded-xlg px-3 pt-3">
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
+			 <!-- 詳細規格 頁籤 -->
 			  <li class="nav-item">
-			    <a class="nav-link active chinese-font" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">詳細規格</a>
+			    <a class="nav-link active chinese-font" id="product_detail-tab" data-toggle="tab" href="#product_detail" role="tab" aria-controls="product_detail" aria-selected="true">詳細規格</a>
 			  </li>
+			 <!-- 我要評價 頁籤 -->
 			  <li class="nav-item">
-			    <a class="nav-link chinese-font" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">評論</a>
+			    <a class="nav-link chinese-font" id="mycomment-tab" data-toggle="tab" href="#mycomment" role="tab" aria-controls="mycomment" aria-selected="false">我要評價</a>
+			  </li>
+			 <!-- 評價 頁籤 -->
+			  <li class="nav-item">
+			    <a class="nav-link chinese-font" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">評價</a>
 			  </li>
 			</ul>
 			<div class="tab-content" id="myTabContent">
-			  <div class="chinese-font tab-pane fade show active px-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+			<!-- 詳細規格 內容 -->
+			  <div class="tab-pane fade show active chinese-font px-3" id="product_detail" role="tabpanel" aria-labelledby="product_detail_tab"><!-- 後端注意:從h2開始到最後一個ol均需存進資料庫 -->
 			  	<h2 class="chinese-font mt-3">木紋壁紙</h2>
 			  		規格及使用注意事項：
 			  	<ol start="1">
@@ -192,13 +201,14 @@
 				<ol>
 					<li>壁紙黏貼服務，一通電話到府免費估價</li>
 					<li>免費樣品索取，詳情請洽客服人員</li>
-				</ol>
+				</ol><!-- 我是最後一個ol -->
 
 			  </div>
-			  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-				<form class="pt-3 px-3 chinese-font" id="ratingsForm" name="comment" method="post">
+			<!-- 我要評價 內容 -->
+			  <div class="tab-pane fade chinese-font" id="mycomment" role="tabpanel" aria-labelledby="mycomment-tab">
+				<form class="pt-3 px-3 chinese-font" id="ratingsForm" name="user_comment" method="post"><!-- 後端注意:此為評價表單之開始處name可自行修改 -->
 					<div class="mb-2">我的評價：</div>
-					<div class="stars">
+					<div class="stars"><!-- 後端注意:星星數計算方式以收到的value計算 -->
 						<input type="radio" name="star" class="star-1" id="star-1" value="1"/>
 						<label class="star-1" for="star-1">1</label>
 						<input type="radio" name="star" class="star-2" id="star-2" value="2"/>
@@ -212,16 +222,38 @@
 						<span></span>
 					</div>
 					<div class="mb-3">我的看法：</div>
-					<textarea name="words" class="rounded-xlg col-12 row-4 mb-2" placeholder="告訴我們您的想法..."></textarea>
+					<textarea name="words" class="rounded-xlg col-12 row-4 mb-2" placeholder="告訴我們您的想法..."></textarea><!-- 後端注意:使用者所輸入的文字請放入資料庫 -->
 					<div class="button-group d-flex justify-content-end chinese-font mb-3">
-						<button type="reset" class="btn btn-outline-danger mr-3">重新填寫</button>
-						<button type="button" class="btn btn-outline-success mr-2">確認送出</button>
+						<button type="reset" class="btn btn-outline-danger mr-3">重新填寫</button><!-- 後端注意:此開關設計為後端範圍 -->
+						<button type="button" class="btn btn-outline-success mr-2">確認送出</button><!-- 後端注意:此開關設計為後端範圍 -->
 					</div>
 					
 				</form>
 				
 			  </div>
-			  
+			<!-- 評論 內容 -->
+			  <div class="tab-pane fade chinese-font" id="comment" role="tabpanel" aria-labelledby="comment-tab">
+				<!-- 第一筆 -->
+				<div class="show_comment mx-2 mt-2 mb-2">
+					
+					<div class="d-flex">mary123***：&emsp;<div class="show_comment_star d-flex">5</div></div>
+					<!-- 後端注意:帳號後末三碼必須隱藏以保護個資，show_comment_star該div內的數字為星星數量，請填樹數字即可星星會自動生成 -->
+					<div class="show_comment_text ml-3 mr-2 mt-3">
+						產品品質佳，到貨速度快。<!-- 後端注意:請在此處放入該商品之文字評價 -->
+					</div>
+				</div>
+			<hr class="col-10"><!-- 分隔線 -->
+				<!-- 第二筆 -->
+				<div class="show_comment mx-2 mt-2 mb-2">
+					
+					<div class="d-flex">mary123***：&emsp;<div class="show_comment_star d-flex">3</div></div>
+					<!-- 後端注意:帳號後末三碼必須隱藏以保護個資，show_comment_star該div內的數字為星星數量，請填樹數字即可星星會自動生成 -->
+					<div class="show_comment_text ml-3 mr-2 mt-3">
+						產品品質佳，賣佳信用良好。<!-- 後端注意:請在此處放入該商品之文字評價 -->
+					</div>
+				</div>
+
+			  </div>
 			</div>
 		</div>
 	</div>

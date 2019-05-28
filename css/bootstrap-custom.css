@@ -124,8 +124,9 @@
  }
 
  /*星星(評價)*/
- .star i{
-    color:#f5c60d;
+ /*評價星星*//*評論區星星*/
+ .show_comment_star,.star i{
+    color:#ffdf60;
     text-shadow: 0.5px 0.5px 1px #757500;
     letter-spacing: 5px;
     font-size: 13px;
@@ -192,9 +193,9 @@
     line-height: 3;
 }
 
-/*評價星星*/
-.rating i:hover.rating i~.rating i::before{
-    font-weight: 900 !important;
+
+.show_comment_star i{
+   
 }
 
 /*文字刪除線*/
@@ -202,3 +203,5 @@
     text-decoration: line-through solid red;
 
 }
+
+
