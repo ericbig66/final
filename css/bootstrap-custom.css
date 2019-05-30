@@ -1,7 +1,12 @@
 
-/*特大圓角(全部)*/
+/*特大圓角*/
 .rounded-xlg{
 	border-radius: 1rem !important;
+}
+
+.rounded-top-xlg{
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
 }
 
 /*網頁logo大小調整*/
@@ -204,4 +209,30 @@
 
 }
 
+/*商品列表按鈕設定*/
+.item_list_button{
+    font-size: 10px;
+    width:50%;
+    justify-content: center;
+    transition: width 0.25s;
+}   
+
+.btn-text{
+    font-size:0;
+    line-height: 0.9;
+    align-self: center;
+    transition: ease 0.25s;
+}
+
+.item_list_button:hover{
+    width:80%;
+}
+.item_list_button:hover .btn-text{
+    font-size: 15px;
+}
+
+/*商品列表特色描述*/
+.trait{
+    font-size: 12px;
+}
 
