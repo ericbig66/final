@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="full">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="500">
+	<title>sotre</title>
+	<link rel="stylesheet" href="css/mdb.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.css">
+	<link rel="stylesheet" href="css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="css/bootstrap-custom.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<link rel="stylesheet" href="css/star.css">
+</head>
+<body class="full d-flex align-items-center">
+<!-- ------------------------------------------------- -->
+	<div id="dynamic-bg"></div>
+
+	<div class="login chinese-font col-5 mx-auto" id="login">
+		<!-- Login： -->
+	  <form class="px-4 py-3" name="login"><!-- 後端注意：登入表單開始，可自行修改name屬性 -->
+	    <div class="form-group">
+	      <label for="account">帳號</label>
+	      <input type="text" class="form-control" id="account" placeholder="account"><!-- 後端注意：帳號請由此接收 -->
+	    </div>
+	    <div class="form-group">
+	      <label for="pwd">密碼</label>
+	      <div class="d-flex">
+	      	<input type="password" class="form-control" id="pwd" placeholder="Password"><!-- 後端注意：密碼請由此接收 -->
+	      	<div id="pwd-show" class="d-flex ml-1 align-items-center" onmousedown="pwd_off()" onmouseup="pwd_on()"><i class="fas fa-eye"></i></div>
+	      </div>	
+	    </div>
+	    <div class="form-group">
+	      <div class="form-check">
+	        <input type="checkbox" class="form-check-input" id="keep_login_status"><!-- 後端注意：此功能(保持登入狀態)可用cookie的有效期限設定 -->
+	        <label class="form-check-label" for="keep_login_status">
+	          保持登入狀態
+	        </label>
+	      </div>
+	    </div>
+	    <button type="submit" class="btn btn-primary">登入</button><!-- 後端注意：登入按鈕 -->
+	  </form>
+	  <div class="dropdown-divider"></div>
+	  <a class="dropdown-item" href="#" onclick="register_show()">還沒有帳號嗎?點我註冊</a>
+	  <a class="dropdown-item d-none" href="#">忘記密碼?</a>
+	</div>
+
+	<div class="reg chinese-font col-4 mx-auto" id="reg">
+		<!-- Register： -->
+	  <form class="px-4 py-3" name="register" action="https://code.jquery.com">
+		<div class="form-group">
+			<div class="d-flex mb-3">
+				<label for="reg_account" class="d-flex align-content-center mb-0" >帳戶名稱</label>
+	      		<input type="text" class="ml-2 rounded-lg border px-1" id="reg_account" placeholder="請設定帳號"><!-- 後端注意：帳戶名稱資料請由此接收 -->
+			</div>
+
+			<div class="d-flex mb-3">
+				<label for="reg_pwd" class="d-flex align-content-center mb-0" >密碼</label>
+	      		<input type="text" class="ml-2 rounded-lg border px-1" id="reg_pwd" placeholder="請設定密碼"><!-- 後端注意：密碼資料請由此接收 -->
+	      		<input type="text" class="ml-2 rounded-lg border px-1" id="pwd_chk" placeholder="請再次輸入密碼">
+			</div>
+
+			<div class="d-flex mb-3">
+				<label for="reg_name" class="d-flex align-content-center mb-0" >姓名</label>
+	      		<input type="text" class="ml-2 rounded-lg border px-1" id="reg_name" placeholder="請輸入您的真實姓名"><!-- 後端注意：姓名資料請由此接收 -->
+				<label for="sex" class="d-flex align-content-center mb-0 ml-3" >性別&emsp;</label>
+	      		<input type="radio" class="ml-2" id="boy" value="m"><!-- 後端注意：性別資料請由此接收 -->
+	      		<label for="boy" class="d-flex align-content-center mb-0 ml-1" >男</label>&emsp;
+	      		<input type="radio" class="ml-2" id="girl" value="f"><!-- 後端注意：性別資料請由此接收 -->
+	      		<label for="girl" class="d-flex align-content-center mb-0 ml-1" >女</label>	      		
+			</div>
+
+			<div class="d-flex mb-3">
+				<label for="birthday" class="d-flex align-content-center mb-0" >生日</label>
+	      		<input type="date" class="ml-2 rounded-lg border px-1" id="birthday"><!-- 後端注意：生日資料請由此接收 -->
+			</div>
+
+			<div class="d-flex mb-3">
+				<label for="address" class="d-flex align-content-center mb-0" >地址</label>
+	      		<input type="text" class="ml-2 rounded-lg border px-1 col-10" id="address" placeholder="請輸入貨品寄送預設地址"><!-- 後端注意：地址資料請由此接收 -->
+			</div>
+
+			<div class="d-flex mt-4 justify-content-around">
+				<button type="submit" class="btn btn-primary">註冊</button><!-- 後端注意：登入按鈕 -->
+				<button type="reset" class="btn btn-primary">重新填寫</button>
+				<button type="reset" class="btn btn-primary" onclick="login_show()">我已經是會員了</button><!-- 後端注意：登入按鈕 -->
+			</div>
+		</div>	  	
+	  </form>
+	</div>
+
+<!-- -----------------------此線以下為javascrpit連結區---------------------------------- -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+</body>
+</html>

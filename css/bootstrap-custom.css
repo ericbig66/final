@@ -142,8 +142,8 @@
     overflow: hidden !important;
     -webkit-appearance:none !important;
     margin:0 0 0 2%;
-    border-top:1px solid blue;
-    border-bottom:1px solid blue;
+    border-top:1px solid #007bff;
+    border-bottom:1px solid #007bff;
     border-left: none;
     border-right: none;
     z-index: 0;
@@ -198,10 +198,16 @@
     line-height: 3;
 }
 
-
-.show_comment_star i{
-   
+/*顏色選擇選單*/
+.color_selector{
+   height: 36px;
+   border-color: #007bff; 
 }
+
+.color_selector:focus{
+    outline: none;
+}
+
 
 /*文字刪除線*/
 .strike_through{
@@ -236,3 +242,40 @@
     font-size: 12px;
 }
 
+/*登入頁面動態背景*/
+#dynamic-bg{
+    position: absolute;
+    z-index: -10;
+    background-color:skyblue;
+    width:100%;
+    height:100%;
+    background-size: cover;
+    transition: ease 5s;
+}
+
+/*html 滿版*/
+.full{
+    width:100%;
+    height: 100%;
+}
+
+/*註冊輸入框*/
+.border-1{
+    border-width: 0.3rem;
+}
+
+.reg{
+    letter-spacing: 3px;
+}
+
+/*sex選擇開關*/
+#boy,#girl{
+    height:1.5rem;
+}
+
+/*登入、註冊區域背景*/
+.login,.reg{
+    background-color:rgba(255,255,255,0.7); 
+    border-radius: 1rem;
+    padding: 10px;
+}
