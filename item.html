@@ -114,25 +114,34 @@
 		
 			<h2 class="price mb-4" id="getprice">$1000</h2><!-- 後端注意:更改價格時應保留$若去除將導致錯誤 -->
 			<div class="product_detail mb-4 chinese-font">
-				商品編號:abc123blue<br><!-- 後端注意:產品名稱命名規則為"商品編號加顏色"，其餘部分請存入資料庫 -->
-				材質:普通亮面<br>
-				特色:<br>
+				商品編號：abc123blue<br><!-- 後端注意:產品名稱命名規則為"商品編號加顏色"，其餘部分請存入資料庫 -->
+				材質：普通亮面<br>
+				特色：<br>
 				<ul>
 					<li>遇到髒污可直接用清水擦拭</li>
 					<li>色彩封存技術顏色始終如一</li>
 					<li>彈性表層長久使用不龜裂</li>
 					<li onclick="change_tab(0)"><a href="#tabs" class="text" >more...</a></li>
 				</ul>
-				<span id="amount_left">庫存量:0</span><br><!-- 後端注意:更改庫存時應保留"庫存量:"，若去除將導致錯誤，另外若庫存量為0時加入購物車的開關會自動消失並以灰色的"銷售一空"按鈕取代，因此後端可省略庫存量為0之控制，但需控制數量為空的例外情形 -->
+				<span id="amount_left">庫存量：10</span><br><!-- 後端注意:更改庫存時應保留"庫存量:"，若去除將導致錯誤，另外若庫存量為0時加入購物車的開關會自動消失並以灰色的"銷售一空"按鈕取代，因此後端可省略庫存量為0之控制，但需控制數量為空的例外情形 -->
 			</div>
 			<div class="buy_form">
 				<form name="order" action="#"><!-- 後端注意:此為購買表單起始處name可自行修改 -->
 					<div class="d-flex">
-						<span class="chinese-font amount_text">我要買</span>
+						<!-- <span class="chinese-font amount_text">我要買</span> -->
 						<div class="btn btn-outline-primary quantity_minus mx-2 amount_btn" onclick="quantity(-1)"><i class="fas fa-minus"></i></div>
 						<input class="text-center quantity_input" type="number" name="quantity" min="1" max="30" value="1" id="amount" onchange="getsum()"><!-- 後端注意:name可以修改，數量請由此接收 -->
 						<div class="btn btn-outline-primary quantity_plus mr-2 amount_btn" onclick="quantity(1)"><i class="fas fa-plus"></i></div>	
-						<span class="chinese-font amount_text">個</span>
+						<span class="chinese-font amount_text">組</span>
+						<span class="chinese-font color_select mx-2">
+							<select class="rounded-lg color_selector"><!-- 後端注意:請自行加入name屬性 -->
+								<option value="w">淺色</option>
+								<option value="b">深色</option>
+								<option value="r">紅色</option>
+								<option value="g">綠色</option>
+								<option value="b">藍色</option>
+							</select>
+						</span>
 						<button type="button" class="btn btn-outline-success chinese-font mx-2" id="add_to_cart">加入購物車</button><!-- 後端注意:此開關為後端設計之範圍 -->
 						<button type='button' class='btn btn-outline-dark chinese-font mx-2' id='out_of_stock' disabled>銷售一空</button><!-- 此按鈕請勿修改(庫存量為0時會自動使用) -->
 
@@ -177,7 +186,7 @@
 			<!-- 詳細規格 內容 -->
 			  <div class="tab-pane fade show active chinese-font px-3" id="product_detail" role="tabpanel" aria-labelledby="product_detail_tab"><!-- 後端注意:從h2開始到最後一個ol均需存進資料庫 -->
 			  	<h2 class="chinese-font mt-3">木紋壁紙</h2>
-			  		規格及使用注意事項：
+			  		<!-- 待修改 --><div class="spec-title text-white" style="background:lightgray;width:100%">規格及使用注意事項：</div>
 			  	<ol start="1">
 			  		<li>商品型號：abc123blue</li>
 			  		<li>尺寸：2公尺 x 3公尺</li>

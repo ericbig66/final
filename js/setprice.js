@@ -35,6 +35,8 @@ function getleft(){
 		 getsum();
 	}
 	else{
+		document.getElementById("add_to_cart").style.display="block";
+		document.getElementById("out_of_stock").style.display="none";
 		limit.min=1;
 		limit.max=left;
 	}
