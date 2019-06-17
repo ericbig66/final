@@ -31,11 +31,11 @@
 	          paint
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">防水漆</a>
+	          <a class="dropdown-item" href="#">防潮漆</a>
 	          <a class="dropdown-item" href="#">白板漆</a>
 	          <a class="dropdown-item" href="#">速乾淨味漆</a>
 	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">油漆簡介</a>
+	          <a class="dropdown-item" href="#">油漆總覽</a>
 	        </div>
 	      </li>
 		<!-- 壁紙選單 -->
@@ -44,11 +44,12 @@
 	          wallpaper
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">亮面壁紙</a>
-	          <a class="dropdown-item" href="#">霧面壁紙</a>
-	          <a class="dropdown-item" href="#">印花壁紙</a>
+	          <a class="dropdown-item" href="#">木紋系列</a>
+	          <a class="dropdown-item" href="#">磚牆風格</a>
+	          <a class="dropdown-item" href="#">大理石風</a>
+	          <a class="dropdown-item" href="#">纖維系列</a>
 	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">壁紙簡介</a>
+	          <a class="dropdown-item" href="#">壁紙總覽</a>
 	        </div>
 	      </li>
 	      <!-- 油漆刷選單 -->
@@ -59,7 +60,8 @@
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="#">滾輪工具</a>
 	          <a class="dropdown-item" href="#">油漆刮刀</a>
-	          <a class="dropdown-item" href="#">各式漆刷</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">工具總覽</a>
 	        </div>
 	      </li>
 	    </ul>
@@ -88,23 +90,23 @@
 	      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
 	    </ol>
 	    <div class="carousel-inner">
-	      <div class="carousel-item active" data-interval="2000">
-	        <img src="http://fakeimg.pl/1000x250/" class="d-block w-100" alt="...">
+	      <div class="carousel-item active" data-interval="200000">
+	        <div id="b1" class="d-block w-100 slide" alt="..."></div>
 	        <div class="carousel-caption d-none d-md-block">
 	          <h5>First slide label</h5>
 	          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 	        </div>
 	      </div>
-	      <div class="carousel-item" data-interval="2000">
+	      <div class="carousel-item" data-interval="200000">
 
-	        <img src="http://fakeimg.pl/1000x250/" class="d-block w-100" alt="...">
+	        <div id="b2" class="d-block w-100 slide" alt="..."></div>
 	        <div class="carousel-caption d-none d-md-block">
 	          <h5>Second slide label</h5>
 	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 	        </div>
 	      </div>
-	      <div class="carousel-item" data-interval="2000">
-	        <img src="http://fakeimg.pl/1000x250/" class="d-block w-100" alt="...">
+	      <div class="carousel-item" data-interval="200000">
+	        <div id="b3" class="d-block w-100 slide" alt="..."></div>
 	        <div class="carousel-caption d-none d-md-block">
 	          <h5>Third slide label</h5>
 	          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -126,7 +128,8 @@
 	<div class="card-deck col-9 mx-auto mb-5 mt-3">
 	  <!-- 商品1 -->
 	  <div class="card ml-2 mr-2 rounded-xlg">
-	    <img src="http://fakeimg.pl/301x250/" class="card-img-top rounded-xlg" alt="...">
+	    <div id="ic1" class="card-img-top rounded-top-xlg item_card
+	    " alt="..."></div>
 	    <div class="card-body">
 	      <h5 class="card-title">Card title</h5>
 	      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -135,7 +138,8 @@
 	  </div>
 	  <!-- 商品2 -->
 	  <div class="card ml-2 mr-2 rounded-xlg">
-	    <img src="http://fakeimg.pl/301x250/" class="card-img-top rounded-xlg" alt="...">
+	    <div id="ic2" class="card-img-top rounded-top-xlg item_card
+	    " alt="..."></div>
 	    <div class="card-body">
 	      <h5 class="card-title">商品名稱</h5>
 	      <p class="card-text">請在此描述產品特性(此須介紹簡單明瞭即可，無須過於攏長，有興趣的消費者會自行點進個別商品頁面觀看)</p>
@@ -144,7 +148,8 @@
 	  </div>
 	  <!-- 商品3 -->
 	  <div class="card ml-2 mr-2 rounded-xlg">
-	    <img src="http://fakeimg.pl/301x250/" class="card-img-top rounded-xlg" alt="...">
+	    <div id="ic3" class="card-img-top rounded-top-xlg item_card
+	    " alt="..."></div>
 	    <div class="card-body">
 	      <h5 class="card-title">Card title</h5>
 	      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -158,7 +163,8 @@
 	<div class="card-deck col-9 mx-auto mb-5 mt-3">
 	  <!-- 商品1 -->
 	  <div class="card ml-2 mr-2 rounded-xlg">
-	    <img src="http://fakeimg.pl/301x250/" class="card-img-top rounded-xlg" alt="...">
+	    <div id="ic4" class="card-img-top rounded-top-xlg item_card
+	    " alt="...">img/wallpaper/marble_dark_demo.jpg</div>
 	    <div class="card-body">
 	      <h5 class="card-title">Card title</h5>
 	      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -167,7 +173,8 @@
 	  </div>
 	  <!-- 商品2 -->
 	  <div class="card ml-2 mr-2 rounded-xlg">
-	    <img src="http://fakeimg.pl/301x250/" class="card-img-top rounded-xlg" alt="...">
+	    <div id="ic5" class="card-img-top rounded-top-xlg item_card
+	    " alt="...">img/wallpaper/wood_green_demo.jpg</div>
 	    <div class="card-body">
 	      <h5 class="card-title">商品名稱</h5>
 	      <p class="card-text">請在此描述產品特性(此須介紹簡單明瞭即可，無須過於攏長，有興趣的消費者會自行點進個別商品頁面觀看)</p>
@@ -176,7 +183,8 @@
 	  </div>
 	  <!-- 商品3 -->
 	  <div class="card ml-2 mr-2 rounded-xlg">
-	    <img src="http://fakeimg.pl/301x250/" class="card-img-top rounded-xlg" alt="...">
+	    <div id="ic6" class="card-img-top rounded-top-xlg item_card
+	    " alt="...">img/paint/waterproof_white_demo.jpg</div>
 	    <div class="card-body">
 	      <h5 class="card-title">Card title</h5>
 	      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -187,24 +195,26 @@
 
 	<!-- 壁紙文案 -->
 	<div class="wallpaper ">
-		<div class="wallpaper_photo col-12 bg-center bg-cover d-flex justify-content-start align-items-center pl-5 mb-5">
-			<div class="wallpaper_intro col-3">
-				<div class="title">標題</div>
-				<div class="innercontent">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</div>	
-			</div>	
+		<div class="wallpaper_photo col-12 bg-center bg-cover d-flex justify-content-end align-items-center pr-5 mb-5">
+			<div class="wallpaper_intro col-3 chinese-font text-white">
+				<div class="title">自然。就是美</div>
+				<div class="innercontent">透過樸實無華的風格展現空間的藝術</div>	
+			</div>
+			<div class="arrow-right px-3 py-3"><i class="fas fa-chevron-right text-white"></i></div>
 		</div>
 	</div>
 
 	<!-- 油漆文案 -->
-	<div class="wallpaper ">
-		<div class="wallpaper_photo col-12 bg-center bg-cover d-flex justify-content-end align-items-center pr-5">
-			<div class="wallpaper_intro col-3">
-				<div class="title">標題</div>
-				<div class="innercontent">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</div>	
+
+	<div class="paint ">
+		<div class="paint_photo col-12 bg-center bg-cover d-flex justify-content-start align-items-center pl-5">
+			<div class="arrow-left px-3 py-3"><i class="fas fa-chevron-left text-white"></i></div>
+			<div class="paint_intro col-3 chinese-font text-white">
+				<div class="title">顏色。重新定義空間</div>
+				<div class="innercontent">透過顏色將空間大小重新詮釋</div>
 			</div>	
 		</div>
 	</div>
-
 <!-- ------------------------------------------------------- -->
 <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark mt-5">
@@ -217,7 +227,7 @@
 
         <!-- Grid column -->
         <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0">Get connected with us on social networks!</h6>
+          <h6 class="mb-0 chinese-font">更多消息請關注我們社群媒體粉絲專頁！</h6>
         </div>
         <!-- Grid column -->
 
@@ -264,11 +274,9 @@
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
         <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold">Company name</h6>
-        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
+        <h6 class="text-uppercase font-weight-bold chinese-font">紙在必行</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto chinese-font" style="width: 60px;">
+        <p>感謝您的造訪，如需詳細資訊可以透過粉絲專頁或著右側的聯絡電話與我們聯繫，營業時間：<br>周一至周五：8:00~20:00<br>週六：10:00~15:00<br>週日及國定假日均暫停服務</p>
 
       </div>
       <!-- Grid column -->
@@ -277,20 +285,18 @@
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <h6 class="text-uppercase font-weight-bold chinese-font">工作團隊</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="#!">MDBootstrap</a>
+          <a href="#!" class="chinese-font">陳冠廷</a>
         </p>
         <p>
-          <a href="#!">MDWordPress</a>
+          <a href="#!" class="chinese-font">陳君修</a>
         </p>
         <p>
-          <a href="#!">BrandFlow</a>
+          <a href="#!" class="chinese-font">邱筠文</a>
         </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p>
+        
 
       </div>
       <!-- Grid column -->
@@ -299,19 +305,19 @@
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <h6 class="text-uppercase font-weight-bold chinese-font">連結傳送門</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="#!">Your Account</a>
+          <a href="#!" class="chinese-font">回到頁首</a>
         </p>
         <p>
-          <a href="#!">Become an Affiliate</a>
+          <a href="#!" class="chinese-font">壁紙專區</a>
         </p>
         <p>
-          <a href="#!">Shipping Rates</a>
+          <a href="#!" class="chinese-font">油漆專區</a>
         </p>
         <p>
-          <a href="#!">Help</a>
+          <a href="#!" class="chinese-font">購物流程介紹</a>
         </p>
 
       </div>
@@ -321,16 +327,16 @@
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <h6 class="text-uppercase font-weight-bold chinese-font">聯絡我們</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p class="chinese-font">
+          <i class="fas fa-home mr-3"></i> 桃園市中壢區中北路200號</p>
         <p>
-          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+          <i class="fas fa-envelope mr-3"></i> getwallpaper@boximail.com</p>
         <p>
-          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+          <i class="fas fa-phone mr-3"></i> (03) 265-1999</p>
         <p>
-          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-        <p>
-          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          <i class="fas fa-print mr-3"></i> (03) 265-1888</p>
 
       </div>
       <!-- Grid column -->
@@ -352,6 +358,7 @@
 <!-- --------------------------------------------------------- -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script src="js/recommand_reader.js"></script>
 	<script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>

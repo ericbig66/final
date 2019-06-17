@@ -18,3 +18,11 @@ function set_status(){
 		} 
 	}
 }
+
+var res = $(".item-resource");
+var thu = $(".item-thumb");
+var am = res.length;
+
+for(var xx= 0; xx<am; xx++){
+	thu[xx].style.background="url("+res[xx].innerHTML+")";
+}
