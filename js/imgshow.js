@@ -15,11 +15,21 @@ var settings="";
 // 	}
 // }
 
+$(document).ready(function(){
+	for(var x = 0; x<5; x++){
+		var p = document.getElementById("t"+x).innerHTML;
+		document.getElementById("t"+x).style.backgroundImage="url("+p+")";
+	}
+})
+
 	
 showme(0);
 function showme(pic){
 	var nowshowing= document.getElementById("photo_frame");
-	nowshowing.style.backgroundImage="url(https://fakeimg.pl/501x501)";
+	//document.getElementById("t"+x).style.backgroundImage="url("+document.getElementById("t"+pic).innerHTML+")";
+ 	var tmp = document.getElementById("t"+pic).innerHTML;
+	var output = tmp.substring(0,tmp.length-4)+"_demo.jpg";
+	nowshowing.style.backgroundImage="url("+output+")";
 	//alert('call me?');
 	settings="<style>\n";
 	console.log("pic= "+pic);
@@ -28,7 +38,7 @@ function showme(pic){
 		//$('#t'+n+":hover").css("opacity", "1");
 		if(n==pic){continue;}
 		console.log("n="+n);
-		settings+="#t"+n+"{opacity:0.7;}\n#t"+n+":hover{opacity:1;}"
+		settings+="#t"+n+"{backgroundSize:cover;opacity:0.5;}\n#t"+n+":hover{opacity:1;}"
 	}
 	//$('#t'+pic).css("opacity", "1");
 	settings+="#t"+pic+"{opacity:1;}\n</style>"
